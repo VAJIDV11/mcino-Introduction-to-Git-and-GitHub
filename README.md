@@ -102,4 +102,4 @@ calculator/
 
 This project is licensed under the **Apache License 2.0** — see the [LICENSE](LICENSE) file for complete details.
 
-_© 2022 XYZ, Inc._
+_© 2023 XYZ, Inc._
