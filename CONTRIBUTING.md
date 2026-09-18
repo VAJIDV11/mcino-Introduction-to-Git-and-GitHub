@@ -7,7 +7,7 @@ All contributions, bug reports, bug fixes, documentation improvements, enhanceme
 1. Fork the repository on GitHub.
 2. Clone your forked repository to your local machine:
    ```bash
-   git clone https://github.com/<your-username>/mcino-Introduction-to-Git-and-GitHub.git
+   git clone https://github.com/VAJIDV11/mcino-Introduction-to-Git-and-GitHub.git
    ```
 3. Create a descriptive feature or bug-fix branch:
    ```bash
