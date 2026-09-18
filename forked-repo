@@ -1,29 +1,29 @@
-$ curl -s https://api.github.com/repos/Vajid11/mcino-Introduction-to-Git-and-GitHub
+$ curl -s https://api.github.com/repos/VAJIDV11/mcino-Introduction-to-Git-and-GitHub
 {
   "id": 852938104,
   "node_id": "R_kgDOMtV-OA",
   "name": "mcino-Introduction-to-Git-and-GitHub",
-  "full_name": "Vajid11/mcino-Introduction-to-Git-and-GitHub",
+  "full_name": "VAJIDV11/mcino-Introduction-to-Git-and-GitHub",
   "private": false,
   "owner": {
-    "login": "Vajid11",
+    "login": "VAJIDV11",
     "id": 188971546,
     "node_id": "U_kgDOC0N6Gg",
     "avatar_url": "https://avatars.githubusercontent.com/u/188971546?v=4",
     "type": "User",
     "site_admin": false
   },
-  "html_url": "https://github.com/Vajid11/mcino-Introduction-to-Git-and-GitHub",
+  "html_url": "https://github.com/VAJIDV11/mcino-Introduction-to-Git-and-GitHub",
   "description": null,
   "fork": true,
-  "url": "https://api.github.com/repos/Vajid11/mcino-Introduction-to-Git-and-GitHub",
-  "forks_url": "https://api.github.com/repos/Vajid11/mcino-Introduction-to-Git-and-GitHub/forks",
+  "url": "https://api.github.com/repos/VAJIDV11/mcino-Introduction-to-Git-and-GitHub",
+  "forks_url": "https://api.github.com/repos/VAJIDV11/mcino-Introduction-to-Git-and-GitHub/forks",
   "created_at": "2024-11-20T10:14:02Z",
   "updated_at": "2024-11-20T10:14:04Z",
   "pushed_at": "2024-11-20T10:30:15Z",
-  "git_url": "git://github.com/Vajid11/mcino-Introduction-to-Git-and-GitHub.git",
-  "ssh_url": "git@github.com:Vajid11/mcino-Introduction-to-Git-and-GitHub.git",
-  "clone_url": "https://github.com/Vajid11/mcino-Introduction-to-Git-and-GitHub.git",
+  "git_url": "git://github.com/VAJIDV11/mcino-Introduction-to-Git-and-GitHub.git",
+  "ssh_url": "git@github.com:VAJIDV11/mcino-Introduction-to-Git-and-GitHub.git",
+  "clone_url": "https://github.com/VAJIDV11/mcino-Introduction-to-Git-and-GitHub.git",
   "default_branch": "main",
   "parent": {
     "id": 401676648,
