@@ -1,0 +1,54 @@
+$ curl -s "https://api.github.com/repos/ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub/pulls?head=Vajid11:bug-fix-revert"
+[
+  {
+    "url": "https://api.github.com/repos/ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub/pulls/11509",
+    "id": 2049102834,
+    "html_url": "https://github.com/ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub/pull/11509",
+    "number": 11509,
+    "state": "open",
+    "locked": false,
+    "title": "Bug fix revert",
+    "user": {
+      "login": "Vajid11",
+      "id": 188971546,
+      "type": "User"
+    },
+    "body": "Revert typo commit via bug-fix-revert branch for Coursera IBM DevOps Final Project.",
+    "created_at": "2024-11-20T10:45:12Z",
+    "updated_at": "2024-11-20T10:45:12Z",
+    "head": {
+      "label": "Vajid11:bug-fix-revert",
+      "ref": "bug-fix-revert",
+      "sha": "766736e8492048561029e019f20186c671a93810",
+      "user": {
+        "login": "Vajid11"
+      },
+      "repo": {
+        "id": 852938104,
+        "name": "mcino-Introduction-to-Git-and-GitHub",
+        "full_name": "Vajid11/mcino-Introduction-to-Git-and-GitHub",
+        "owner": {
+          "login": "Vajid11"
+        },
+        "html_url": "https://github.com/Vajid11/mcino-Introduction-to-Git-and-GitHub",
+        "fork": true
+      }
+    },
+    "base": {
+      "label": "ibm-developer-skills-network:main",
+      "ref": "main",
+      "user": {
+        "login": "ibm-developer-skills-network"
+      },
+      "repo": {
+        "id": 401676648,
+        "name": "mcino-Introduction-to-Git-and-GitHub",
+        "full_name": "ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub",
+        "owner": {
+          "login": "ibm-developer-skills-network"
+        },
+        "html_url": "https://github.com/ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub"
+      }
+    }
+  }
+]
