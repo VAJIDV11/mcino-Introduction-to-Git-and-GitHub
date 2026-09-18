@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Interest Calculator | Simple & Compound Interest</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-background">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+  </div>
+
+  <main class="calculator-container">
+    <!-- Header -->
+    <header class="calculator-header">
+      <div class="brand-badge">
+        <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="3" width="20" height="14" rx="2" />
+          <line x1="8" y1="21" x2="16" y2="21" />
+          <line x1="12" y1="17" x2="12" y2="21" />
+        </svg>
+        <span>IBM DevOps Final Project</span>
+      </div>
+      <h1 class="project-title">Simple Interest Calculator</h1>
+      <p class="project-subtitle">Compute real-time interest returns, compare simple vs. compound models, and analyze year-by-year growth.</p>
+      
+      <!-- Mode & Currency Switcher -->
+      <div class="controls-toolbar">
+        <div class="toggle-group" role="tablist">
+          <button type="button" class="toggle-btn active" id="btnSimple" data-mode="simple">Simple Interest</button>
+          <button type="button" class="toggle-btn" id="btnCompound" data-mode="compound">Compound Interest</button>
+        </div>
+        <div class="currency-picker">
+          <label for="currencySelect">Currency:</label>
+          <select id="currencySelect">
+            <option value="₹">INR (₹)</option>
+            <option value="$" selected>USD ($)</option>
+            <option value="€">EUR (€)</option>
+            <option value="£">GBP (£)</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Grid: Input Form + Visual Results -->
+    <section class="calculator-grid">
+      <!-- Left: Form Inputs -->
+      <div class="card glass-card input-card">
+        <h2 class="card-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+          </svg>
+          Investment Parameters
+        </h2>
+
+        <!-- Principal Input -->
+        <div class="input-field-group">
+          <div class="input-header">
+            <label for="principal">Principal Amount (<span class="currency-symbol">$</span>)</label>
+            <span class="value-badge" id="principalBadge">$10,000</span>
+          </div>
+          <div class="input-wrapper">
+            <span class="prefix currency-symbol">$</span>
+            <input type="number" id="principal" min="100" max="10000000" step="100" value="10000" />
+          </div>
+          <input type="range" id="principalSlider" class="range-slider" min="1000" max="500000" step="1000" value="10000" />
+        </div>
+
+        <!-- Rate Input -->
+        <div class="input-field-group">
+          <div class="input-header">
+            <label for="rate">Annual Interest Rate (%)</label>
+            <span class="value-badge" id="rateBadge">8.5%</span>
+          </div>
+          <div class="input-wrapper">
+            <input type="number" id="rate" min="0.1" max="50" step="0.1" value="8.5" />
+            <span class="suffix">%</span>
+          </div>
+          <input type="range" id="rateSlider" class="range-slider" min="1" max="30" step="0.25" value="8.5" />
+        </div>
+
+        <!-- Time Period -->
+        <div class="input-field-group">
+          <div class="input-header">
+            <label for="time">Time Period (Years)</label>
+            <span class="value-badge" id="timeBadge">5 Years</span>
+          </div>
+          <div class="input-wrapper">
+            <input type="number" id="time" min="0.5" max="50" step="0.5" value="5" />
+            <span class="suffix">Yrs</span>
+          </div>
+          <input type="range" id="timeSlider" class="range-slider" min="1" max="30" step="1" value="5" />
+        </div>
+
+        <div class="action-buttons">
+          <button type="button" class="btn btn-secondary" id="btnReset">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+              <path d="M3 3v5h5" />
+            </svg>
+            Reset
+          </button>
+          <button type="button" class="btn btn-primary" id="btnCopy">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+            Copy Summary
+          </button>
+        </div>
+      </div>
+
+      <!-- Right: Summary & Graphical Donut -->
+      <div class="card glass-card result-card">
+        <h2 class="card-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+          Maturity Breakdown
+        </h2>
+
+        <!-- Interactive Donut Chart -->
+        <div class="chart-container">
+          <svg class="donut-chart" viewBox="0 0 200 200">
+            <circle class="donut-bg" cx="100" cy="100" r="75" />
+            <circle class="donut-segment principal-segment" cx="100" cy="100" r="75" />
+            <circle class="donut-segment interest-segment" cx="100" cy="100" r="75" />
+          </svg>
+          <div class="donut-center">
+            <span class="donut-center-label">Total Value</span>
+            <span class="donut-center-value" id="chartTotalAmount">$14,250</span>
+          </div>
+        </div>
+
+        <!-- Metrics Cards -->
+        <div class="metrics-grid">
+          <div class="metric-box">
+            <span class="metric-indicator principal-dot"></span>
+            <div class="metric-info">
+              <span class="metric-label">Principal Amount</span>
+              <span class="metric-value" id="metricPrincipal">$10,000</span>
+            </div>
+            <span class="metric-pct" id="metricPrincipalPct">70.2%</span>
+          </div>
+
+          <div class="metric-box">
+            <span class="metric-indicator interest-dot"></span>
+            <div class="metric-info">
+              <span class="metric-label" id="interestLabel">Total Simple Interest</span>
+              <span class="metric-value interest-highlight" id="metricInterest">$4,250</span>
+            </div>
+            <span class="metric-pct" id="metricInterestPct">29.8%</span>
+          </div>
+
+          <div class="metric-box total-box">
+            <div class="metric-info">
+              <span class="metric-label">Maturity Amount (Principal + Interest)</span>
+              <span class="metric-value total-highlight" id="metricTotal">$14,250</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formula Callout -->
+        <div class="formula-box">
+          <span class="formula-title">Current Formula:</span>
+          <code id="formulaCode">Simple Interest = (P × R × T) / 100</code>
+        </div>
+      </div>
+    </section>
+
+    <!-- Amortization Schedule Table -->
+    <section class="card glass-card schedule-card">
+      <div class="schedule-header">
+        <h2 class="card-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="20" x2="18" y2="10" />
+            <line x1="12" y1="20" x2="12" y2="4" />
+            <line x1="6" y1="20" x2="6" y2="14" />
+          </svg>
+          Year-by-Year Growth Schedule
+        </h2>
+        <span class="schedule-badge" id="scheduleDuration">5 Years Timeline</span>
+      </div>
+
+      <div class="table-responsive">
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Opening Balance</th>
+              <th>Interest Earned</th>
+              <th>Closing Balance</th>
+              <th>Cumulative Growth</th>
+            </tr>
+          </thead>
+          <tbody id="scheduleBody">
+            <!-- Dynamically populated -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="calculator-footer">
+      <p>© 2024 IBM Developer Skills Network — Simple Interest Project.</p>
+      <p class="author-credits">Designed & Developed by <strong>Vajid11</strong> | Licensed under Apache 2.0</p>
+    </footer>
+  </main>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">Copied to clipboard!</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
